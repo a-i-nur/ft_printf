@@ -17,7 +17,7 @@ O_FILES = $(C_FILES:.c=.o)
 O_BONUS= $(C_BONUS:.c=.o)
 
 NAME = libft.a
-HEADER = libft.h
+HEADER = ../includes/
 
 all: $(NAME)
 
