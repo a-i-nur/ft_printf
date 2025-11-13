@@ -6,7 +6,7 @@
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:18:10 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/13 21:32:46 by dev              ###   ########.fr       */
+/*   Updated: 2025/11/13 21:52:58 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ static int  ft_check_type(const char *format, int *index, va_list *arguments)
         len_printed++;
     }
     *index += arg_info.len;
-    if (!arguments)
-        printf("NO ARGS\n");
     return (len_printed);
 }
 

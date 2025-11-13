@@ -28,7 +28,7 @@ static char ft_get_type(const char *format, int index, int *arg_len)
     return (0);
 }
 
-static  t_argument ft_get_arg_info(const char *format, int index)
+t_argument ft_get_arg_info(const char *format, int index)
 {
     t_argument arg_inf;
     int i;
