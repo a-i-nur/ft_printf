@@ -1,32 +1,23 @@
 #include "ft_printf.h"
 
-static int fr_len_num(int number)
+int	ft_print_di_type(va_list *arguments)
 {
-    long num;
-    int len_num;
+	int		number;
+	int		base;
+	int		len_num;
+	long	num_lng;
 
-    num = (long)number;
-    if (num == 0)
-        return (1);
-    len_num = 0;
-    if (num < 0)
-    {
-        len_num++;
-        num *= -1;
-    }
-    while (num != 0)
-    {
-        num = num / 10;
-        len_num++;
-    }
-    return (len_num);
-}
-
-int ft_print_di_type(va_list *arguments, t_argument arg_info)
-{
-    int number;
-
-    number = va_arg(*arguments, int);
-    ft_putnbr_fd(number, 1);
-    return (ft_len_num(number));
+	number = va_arg(*arguments, int);
+	ft_putnbr_fd(number, 1);
+	len_num = 0;
+	base = 10;
+	if (number < 0)
+	{
+		len_num++;
+		num_lng = (long)number * -1;
+	}
+	else
+		num_lng = (long)number;
+	len_num += ft_len_num_base((unsigned long)num_lng, base);
+	return (len_num);
 }

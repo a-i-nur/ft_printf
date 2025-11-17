@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:33:25 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/07 17:25:22 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:51:02 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ static int	ft_create_lines(char **arr_str, size_t len_arr,
 			num_line++;
 		}
 		i++;
-	}	
+	}
 	return (1);
 }
 

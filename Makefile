@@ -1,7 +1,10 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror -I$(INCLUDES)
 
-C_FILES = ft_printf.c
+C_FILES = ft_printf.c ft_get_arg_info.c ft_print_types.c \
+ft_print_c_type.c ft_print_p_type.c ft_print_s_type.c \
+ft_print_di_type.c ft_print_u_type.c ft_print_x_type.c \
+ft_len_num_base.c ft_putnbr_base_fd.c
 
 NAME = libftprintf.a
 INCLUDES = includes
@@ -41,6 +44,10 @@ fclean: clean
 re: fclean all
 
 test: 
+	@$(CC) $(NAME) 
+	@./a.out
+
+testwww: 
 	@$(CC) $(FLAGS) $(NAME) 
 	@./a.out
 
