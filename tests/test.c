@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:02:53 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 18:14:05 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/18 18:57:02 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,5 +210,4 @@
          printf("Some tests differ — investigate mismatches above.\n");
 
      return 0;
- }
-*/
+ }*/

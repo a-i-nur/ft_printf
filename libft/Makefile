@@ -1,5 +1,5 @@
 CC = cc
-FLAGS = -Wall -Wextra -Werror -I.
+FLAGS = -Wall -Wextra -Werror -I. -I../includes
 
 C_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -14,7 +14,7 @@ C_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 O_FILES = $(C_FILES:.c=.o)
 
 NAME = libft.a
-HEADER = ../includes/
+HEADER = ../includes/libft.h
 
 all: $(NAME)
 
