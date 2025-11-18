@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_arg_info.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:54:38 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 13:54:40 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static char	ft_get_type(const char *format, int index, int *arg_len)

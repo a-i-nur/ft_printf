@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_len_num_base.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_fd_ret.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 13:54:49 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 13:54:51 by aakhmeto         ###   ########.fr       */
+/*   Created: 2025/11/18 15:56:58 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 16:05:50 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_len_num_base(unsigned long number, int base)
+int	ft_putstr_fd_ret(char *s, int fd)
 {
-	int	len_number;
+	int	i;
 
-	if (number == 0)
-		return (1);
-	len_number = 0;
-	while (number != 0)
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
 	{
-		number = number / base;
-		len_number++;
+		if (ft_putchar_fd_ret(s[i], fd) == -1)
+			return (-1);
+		i++;
 	}
-	return (len_number);
+	return (1);
 }

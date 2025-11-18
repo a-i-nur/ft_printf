@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_u_type.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:55:37 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 16:18:30 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_u_type(va_list *arguments)
@@ -9,6 +21,7 @@ int	ft_print_u_type(va_list *arguments)
 	number = va_arg(*arguments, unsigned int);
 	base = 10;
 	digits = "0123456789";
-	ft_putnbr_base_fd((unsigned long)number, digits, base, 1);
-	return (ft_len_num_base((unsigned  long)number, base));
+	if (ft_putnbr_base_fd((unsigned long)number, digits, base, 1) == -1)
+		return (-1);
+	return (ft_len_num_base((unsigned long)number, base));
 }

@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_len_num_base.c                                  :+:      :+:    :+:   */
+/*   ft_putchar_fd_ret.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 13:54:49 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 13:54:51 by aakhmeto         ###   ########.fr       */
+/*   Created: 2025/11/18 15:40:55 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 16:04:04 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_len_num_base(unsigned long number, int base)
+int	ft_putchar_fd_ret(char c, int fd)
 {
-	int	len_number;
-
-	if (number == 0)
-		return (1);
-	len_number = 0;
-	while (number != 0)
-	{
-		number = number / base;
-		len_number++;
-	}
-	return (len_number);
+	if (write(fd, &c, 1) == -1)
+		return (-1);
+	return (1);
 }

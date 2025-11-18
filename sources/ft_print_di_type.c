@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_di_type.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:55:04 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 17:53:17 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_di_type(va_list *arguments)
@@ -8,9 +20,10 @@ int	ft_print_di_type(va_list *arguments)
 	long	num_lng;
 
 	number = va_arg(*arguments, int);
-	ft_putnbr_fd(number, 1);
-	len_num = 0;
 	base = 10;
+	if (ft_putnbr_fd_ret(number, 1) == -1)
+		return (-1);
+	len_num = 0;
 	if (number < 0)
 	{
 		len_num++;

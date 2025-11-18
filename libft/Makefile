@@ -7,34 +7,28 @@ C_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-C_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 O_FILES = $(C_FILES:.c=.o)
-
-O_BONUS= $(C_BONUS:.c=.o)
 
 NAME = libft.a
 HEADER = ../includes/
 
 all: $(NAME)
 
+bonus: all
+
 $(NAME): $(O_FILES)
 	@ar rcs $(NAME) $^
-	@echo "Libc functions, additional functions are ready"
-
-bonus:  $(O_FILES) $(O_BONUS)
-	@ar rcs $(NAME) $^
-	@echo "Bonus functions are ready"
+	@echo "Libft is ready"
 
 %.o: %.c $(HEADER)
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo "$@ is ready"
 
 clean:
-	@rm -f $(O_FILES) $(O_BONUS)
+	@rm -f $(O_FILES)
 	@echo ".o files were deleted"
 
 fclean: clean
@@ -43,11 +37,4 @@ fclean: clean
 
 re: fclean all
 
-#test: 
-#	@$(CC) $(FLAGS) $(NAME) 
-#	@./a.out
-
-#norm:
-#	@norminette
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re 

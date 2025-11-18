@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_len_num_base.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd_ret.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 13:54:49 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 13:54:51 by aakhmeto         ###   ########.fr       */
+/*   Created: 2025/11/18 17:46:15 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 17:56:50 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_len_num_base(unsigned long number, int base)
+int	ft_putnbr_fd_ret(int n, int fd)
 {
-	int	len_number;
-
-	if (number == 0)
-		return (1);
-	len_number = 0;
-	while (number != 0)
+	if (n == -2147483648)
 	{
-		number = number / base;
-		len_number++;
+		if (ft_putstr_fd_ret("-2147483648", fd) == -1)
+			return (-1);
 	}
-	return (len_number);
+	else
+	{
+		if (n < 0)
+		{
+			if (ft_putchar_fd_ret('-', fd) == -1)
+				return (-1);
+			n *= -1;
+		}
+		if (n >= 10)
+		{
+			if (ft_putnbr_fd_ret((n / 10), fd) == -1)
+				return (-1);
+		}
+		if (ft_putchar_fd_ret(n % 10 + '0', fd) == -1)
+			return (-1);
+	}
+	return (1);
 }

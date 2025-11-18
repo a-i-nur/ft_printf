@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_s_type.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:55:19 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 16:04:51 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_s_type(va_list *arguments)
@@ -9,6 +21,7 @@ int	ft_print_s_type(va_list *arguments)
 	null_answer = "(null)";
 	if (!str)
 		str = null_answer;
-	ft_putstr_fd(str, 1);
+	if (ft_putstr_fd_ret(str, 1) == -1)
+		return (-1);
 	return (ft_strlen(str));
 }

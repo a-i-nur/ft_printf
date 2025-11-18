@@ -1,24 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_x_type.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:55:44 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 18:00:30 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_x_type(va_list *arguments, char type)
 {
 	unsigned int	number;
 	int				base;
-	char			*digits_upper;
-	char			*digits_capital;
+	char			*digits_low;
+	char			*digits_upp;
+	int				res;
 
 	number = (unsigned int)va_arg(*arguments, unsigned int);
 	base = 16;
+	res = 0;
 	if (number == 0)
 	{
-		ft_putchar_fd('0', 1);
+		if (ft_putchar_fd_ret('0', 1) == -1)
+			return (-1);
 		return (1);
 	}
-	digits_upper = "0123456789abcdef";
-	digits_capital = "0123456789ABCDEF";
+	digits_low = "0123456789abcdef";
+	digits_upp = "0123456789ABCDEF";
 	if (type == 'x')
-		ft_putnbr_base_fd((unsigned long)number, digits_upper, base, 1);
+		res = ft_putnbr_base_fd((unsigned long)number, digits_low, base, 1);
 	else if (type == 'X')
-		ft_putnbr_base_fd((unsigned long)number, digits_capital, base, 1);
+		res = ft_putnbr_base_fd((unsigned long)number, digits_upp, base, 1);
+	if (res == -1)
+		return (-1);
 	return (ft_len_num_base((unsigned long)number, base));
 }

@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_types.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 13:55:27 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/18 15:54:46 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_types(va_list *arguments, t_argument arg_info)
 {
 	if (arg_info.type == '%')
 	{
-		ft_putchar_fd('%', 1);
+		if (ft_putchar_fd_ret('%', 1) == -1)
+			return (-1);
 		return (1);
 	}
 	if (arg_info.type == 'c')
