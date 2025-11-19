@@ -17,8 +17,6 @@ O_FILES = $(addprefix $(OBJECTS)/,$(C_FILES:.c=.o))
 
 all: $(NAME)
 
-bonus: all
-
 $(LIBFT)/libft.a:
 	@$(MAKE) -C $(LIBFT)/
 
@@ -57,4 +55,4 @@ re: fclean all
 #norm:
 #	@norminette
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

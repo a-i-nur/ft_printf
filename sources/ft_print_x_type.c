@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:55:44 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 18:00:30 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/19 12:21:19 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_print_x_type(va_list *arguments, char type)
 	char			*digits_upp;
 	int				res;
 
-	number = (unsigned int)va_arg(*arguments, unsigned int);
+	number = va_arg(*arguments, unsigned int);
 	base = 16;
 	res = 0;
 	if (number == 0)

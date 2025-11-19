@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:55:11 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/18 18:02:01 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/19 12:21:03 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_print_p_type(va_list *arguments)
 	int				base;
 	char			*null_answer;
 
-	pntr = (void *)va_arg(*arguments, void *);
+	pntr = va_arg(*arguments, void *);
 	null_answer = "(nil)";
 	if (!pntr)
 	{
